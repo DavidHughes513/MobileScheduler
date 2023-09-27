@@ -25,7 +25,9 @@ public interface CoursesDAO {
     void delete(Courses courses);
 
     @Query("SELECT * FROM Courses ORDER BY ID ASC")
-    Flow<List<Courses>> getAllCourses();
+    List<Courses> getAllCourses();
 
+    @Query("DELETE FROM Courses WHERE ID < 1000")
+    void deleteAllCourses();
 
 }

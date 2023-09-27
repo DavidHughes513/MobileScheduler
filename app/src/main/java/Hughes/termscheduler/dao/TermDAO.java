@@ -10,9 +10,7 @@ import androidx.room.Upsert;
 
 import java.util.List;
 
-import Hughes.termscheduler.entities.Courses;
 import Hughes.termscheduler.entities.Term;
-import kotlinx.coroutines.flow.Flow;
 
 @Dao
 public interface TermDAO {
@@ -28,9 +26,10 @@ public interface TermDAO {
     void delete(Term term);
 
     @Query("SELECT * FROM Terms ORDER BY ID ASC")
-    Flow<List<Term>> getAllTerms();
+    List<Term> getAllTerms();
 
-    /*@Query("SELECT * FROM Courses WHERE ID = courseID")
-    Flow<List<Courses>> getTermCourses(int ID);*/
+    @Query("DELETE FROM Terms WHERE ID < 1000")
+    void deleteAllTerms();
+
 
 }

@@ -4,25 +4,73 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import java.sql.Date;
+import java.util.List;
 
 @Entity(tableName = "Courses")
 public class Courses {
     @PrimaryKey(autoGenerate = true)
     private int ID;
+
+    private int termID;
     private String title;
     private String start;
     private String end;
-    //private enum status {notStarted, inProgress, finished}
-    private int instructorID;
-    private int assessmentID;
+    private String status;
+    private String instructName;
+    private String instructPhone;
+    private String instuctorEmail;
 
-    public Courses(int ID, String title, String start, String end, int instructorID, int assessmentID) {
+
+    public Courses(int ID, int termID, String title, String start, String end, String status, String instructName, String instructPhone, String instuctorEmail) {
         this.ID = ID;
+        this.termID = termID;
         this.title = title;
         this.start = start;
         this.end = end;
-        this.instructorID = instructorID;
-        this.assessmentID = assessmentID;
+        this.status = status;
+        this.instructName = instructName;
+        this.instructPhone = instructPhone;
+        this.instuctorEmail = instuctorEmail;
+    }
+
+    public int getTermID() {
+        return termID;
+    }
+
+    public void setTermID(int termID) {
+        this.termID = termID;
+    }
+
+    public String getInstructName() {
+        return instructName;
+    }
+
+    public void setInstructName(String instructName) {
+        this.instructName = instructName;
+    }
+
+    public String getInstructPhone() {
+        return instructPhone;
+    }
+
+    public void setInstructPhone(String instructPhone) {
+        this.instructPhone = instructPhone;
+    }
+
+    public String getInstuctorEmail() {
+        return instuctorEmail;
+    }
+
+    public void setInstuctorEmail(String instuctorEmail) {
+        this.instuctorEmail = instuctorEmail;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public int getID() {
@@ -57,19 +105,4 @@ public class Courses {
         this.end = end;
     }
 
-    public int getInstructorID() {
-        return instructorID;
-    }
-
-    public void setInstructorID(int instructorID) {
-        this.instructorID = instructorID;
-    }
-
-    public int getAssessmentID() {
-        return assessmentID;
-    }
-
-    public void setAssessmentID(int assessmentID) {
-        this.assessmentID = assessmentID;
-    }
 }

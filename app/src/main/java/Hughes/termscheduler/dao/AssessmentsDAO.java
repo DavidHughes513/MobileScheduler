@@ -27,5 +27,5 @@ public interface AssessmentsDAO {
     void delete(Assessments assessments);
 
     @Query("SELECT * FROM Assessments ORDER BY assessmentID ASC")
-    Flow<List<Assessments>> getAllAssessments();
+    List<Assessments> getAllAssessments();
 }

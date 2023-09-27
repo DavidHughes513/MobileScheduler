@@ -9,22 +9,19 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import Hughes.termscheduler.entities.Courses;
 import Hughes.termscheduler.entities.Instructors;
 import Hughes.termscheduler.entities.Notes;
-import kotlinx.coroutines.flow.Flow;
-
 @Dao
-public interface InstructorsDAO {
+public interface NotesDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    void insert(Instructors instructors);
+    void insert(Notes notes);
 
     @Update
-    void update(Instructors instructors);
+    void update(Notes notes);
 
     @Delete
-    void delete(Instructors instructors);
+    void delete(Notes notes);
 
-    @Query("SELECT * FROM Instructors ORDER BY ID ASC")
-    List<Instructors> getAllInstructors();
+    @Query("SELECT * FROM Notes")
+    List<Notes> getAllNotes();
 }

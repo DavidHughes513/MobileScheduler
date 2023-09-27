@@ -13,15 +13,72 @@
         android:theme="@style/Theme.TermScheduler"
         tools:targetApi="31">
         <activity
-            android:name=".UI.TermsList"
-            android:label="Terms List"
+            android:windowSoftInputMode="adjustNothing"
+            android:name=".Activities.Courses.Notes.EditNotes"
             android:exported="false" />
         <activity
-            android:name=".UI.MainActivity"
-            android:label="Main Activity"
-            android:exported="true">
+            android:name=".Activities.Assessments.AssessmentDetails"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Terms.TermDetails"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Courses.CourseDetails"
+            android:exported="false" />
+        <activity
+            android:windowSoftInputMode="adjustNothing"
+            android:name=".Activities.Alerts.AssessmentAlert"
+            android:exported="false" />
+        <activity
+            android:windowSoftInputMode="adjustNothing"
+            android:name=".Activities.Alerts.CoursesAlert"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Assessments.AssessmentList"
+            android:exported="false"
+            android:label="Assessments List"
+            android:parentActivityName=".Activities.Home" />
+        <activity
+            android:name=".Activities.UI.InstructorsList"
+            android:exported="false" />
+        <activity
+            android:windowSoftInputMode="adjustNothing"
+            android:name=".Activities.Assessments.EditAssessment"
+            android:exported="false"
+            android:label="Edit Assessment"
+            android:parentActivityName=".Activities.Courses.CourseList" />
+        <activity
+            android:windowSoftInputMode="adjustNothing"
+            android:name=".Activities.Terms.EditTerm"
+            android:exported="false"
+            android:label="Edit Term"
+            android:parentActivityName=".Activities.Terms.TermList" />
+        <activity
+            android:windowSoftInputMode="adjustNothing"
+            android:name=".Activities.Terms.TermList"
+            android:exported="false"
+            android:label="Terms List"
+            android:parentActivityName=".Activities.Home" />
+        <activity
+            android:windowSoftInputMode="adjustNothing"
+            android:name=".Activities.Courses.CourseList"
+            android:exported="false"
+            android:label="Courses List"
+            android:parentActivityName=".Activities.Home" />
+        <activity
+            android:windowSoftInputMode="adjustNothing"
+            android:name=".Activities.Courses.EditCourse"
+            android:exported="false"
+            android:label="Edit Course"
+            android:parentActivityName=".Activities.Courses.CourseList" />
+        <activity
+            android:windowSoftInputMode="adjustNothing"
+            android:name=".Activities.Home"
+            android:exported="true"
+            android:label="Welcome to Term Scheduler!">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

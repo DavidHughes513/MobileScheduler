@@ -9,10 +9,12 @@ import java.util.concurrent.Executors;
 import Hughes.termscheduler.dao.AssessmentsDAO;
 import Hughes.termscheduler.dao.CoursesDAO;
 import Hughes.termscheduler.dao.InstructorsDAO;
+import Hughes.termscheduler.dao.NotesDAO;
 import Hughes.termscheduler.dao.TermDAO;
 import Hughes.termscheduler.entities.Assessments;
 import Hughes.termscheduler.entities.Courses;
 import Hughes.termscheduler.entities.Instructors;
+import Hughes.termscheduler.entities.Notes;
 import Hughes.termscheduler.entities.Term;
 import kotlinx.coroutines.flow.Flow;
 
@@ -21,11 +23,13 @@ public class Repository {
     private CoursesDAO mCoursesDAO;
     private AssessmentsDAO mAssessmentDAO;
     private InstructorsDAO mInstructorsDAO;
+    private NotesDAO mNotesDAO;
 
-    private Flow<List<Term>> mAllTerms;
-    private Flow<List<Courses>> mAllCourses;
-    private Flow<List<Assessments>> mAllAssessments;
-    private Flow<List<Instructors>> mAllInstructors;
+    private List<Term> mAllTerms;
+    private List<Courses> mAllCourses;
+    private List<Assessments> mAllAssessments;
+    private List<Instructors> mAllInstructors;
+    private List<Notes> mAllNotes;
 
     private static int NUMBER_OF_THREADS = 4;
     static final ExecutorService databaseExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
@@ -39,7 +43,7 @@ public class Repository {
     }
 
     //========================= TERMS FUNCTIONS ===========================
-    public Flow<List<Term>> getmAllTerms(){
+    public List<Term> getmAllTerms(){
         databaseExecutor.execute(() -> {
             mAllTerms = mTermDAO.getAllTerms();
         });
@@ -52,6 +56,16 @@ public class Repository {
         return mAllTerms;
     }
 
+    public void deleteAllTerms(){
+        databaseExecutor.execute(() -> {
+            mTermDAO.deleteAllTerms();
+        });
+        try {
+            Thread.sleep(1000);
+        }catch (InterruptedException e){
+            throw new RuntimeException(e);
+        }
+    }
     public void insertTerm(Term term){
         databaseExecutor.execute(() -> {
             mTermDAO.insert(term);
@@ -70,7 +84,7 @@ public class Repository {
 
     //========================= COURSES FUNCTIONS ===========================
 
-    public Flow<List<Courses>> getmAllCourses(){
+    public List<Courses> getmAllCourses(){
         databaseExecutor.execute(() -> {
             mAllCourses = mCoursesDAO.getAllCourses();
         });
@@ -81,6 +95,17 @@ public class Repository {
             throw new RuntimeException(e);
         }
         return mAllCourses;
+    }
+
+    public void deleteAllCourses(){
+        databaseExecutor.execute(() -> {
+            mCoursesDAO.deleteAllCourses();
+        });
+        try {
+            Thread.sleep(1000);
+        }catch (InterruptedException e){
+            throw new RuntimeException(e);
+        }
     }
 
     public void insertCourse(Courses course){
@@ -101,7 +126,7 @@ public class Repository {
 
     //========================= ASSESSMENT FUNCTIONS ===========================
 
-    public Flow<List<Assessments>> getmAllAssessments(){
+    public List<Assessments> getmAllAssessments(){
         databaseExecutor.execute(() -> {
             mAllAssessments = mAssessmentDAO.getAllAssessments();
         });
@@ -132,7 +157,7 @@ public class Repository {
 
 
     //========================= INSTRUCTOR FUNCTIONS ===========================
-    public Flow<List<Instructors>> getmAllInstructors(){
+    public List<Instructors> getmAllInstructors(){
         databaseExecutor.execute(() -> {
             mAllInstructors = mInstructorsDAO.getAllInstructors();
         });
@@ -158,6 +183,36 @@ public class Repository {
     public void deleteInstructors(Instructors instructors){
         databaseExecutor.execute(() -> {
             mInstructorsDAO.delete(instructors);
+        });
+    }
+
+
+    public List<Notes> getmAllNotes(){
+        databaseExecutor.execute(() -> {
+            mAllNotes = mNotesDAO.getAllNotes();
+        });
+
+        try {
+            Thread.sleep(1000);
+        }catch (InterruptedException e){
+            throw new RuntimeException(e);
+        }
+        return mAllNotes;
+    }
+
+    public void insertNotes(Notes notes){
+        databaseExecutor.execute(() -> {
+            mNotesDAO.insert(notes);
+        });
+    }
+    public void updateNotes(Notes notes){
+        databaseExecutor.execute(() -> {
+            mNotesDAO.update(notes);
+        });
+    }
+    public void deleteNotes(Notes notes){
+        databaseExecutor.execute(() -> {
+            mNotesDAO.delete(notes);
         });
     }
 

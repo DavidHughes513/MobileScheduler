@@ -11,7 +11,7 @@ android {
         minSdk = 26
         targetSdk = 33
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.01"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -27,6 +27,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
+
 
 dependencies {
     val roomVersion="2.5.2"

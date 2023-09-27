@@ -11,14 +11,12 @@ public class Term {
     private String title;
     private String start;
     private String end;
-    private Integer courseID;
 
-    public Term(int ID, String title, String start, String end, Integer courseID) {
+    public Term(int ID, String title, String start, String end) {
         this.ID = ID;
         this.title = title;
         this.start = start;
         this.end = end;
-        this.courseID = courseID;
     }
 
 
@@ -54,11 +52,5 @@ public class Term {
         this.end = end;
     }
 
-    public Integer getCourseID() {
-        return courseID;
-    }
 
-    public void setCourseID(Integer courseID) {
-        this.courseID = courseID;
-    }
 }

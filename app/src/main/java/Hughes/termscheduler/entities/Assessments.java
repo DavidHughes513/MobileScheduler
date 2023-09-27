@@ -9,14 +9,17 @@ import java.sql.Date;
 public class Assessments {
     @PrimaryKey(autoGenerate = true)
     private int assessmentID;
+
+    private int courseID;
     private String assessmentName;
     private String name;
     private String start;
     private String end;
     private String type;
 
-    public Assessments(int assessmentID, String assessmentName, String name, String start, String end, String type) {
+    public Assessments(int assessmentID, int courseID, String assessmentName, String name, String start, String end, String type) {
         this.assessmentID = assessmentID;
+        this.courseID = courseID;
         this.assessmentName = assessmentName;
         this.name = name;
         this.start = start;
@@ -24,6 +27,13 @@ public class Assessments {
         this.type = type;
     }
 
+    public int getCourseID() {
+        return courseID;
+    }
+
+    public void setCourseID(int courseID) {
+        this.courseID = courseID;
+    }
 
     public int getAssessmentID() {
         return assessmentID;
