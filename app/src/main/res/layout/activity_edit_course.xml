@@ -8,17 +8,19 @@
     tools:context=".Activities.Courses.EditCourse">
 
     <ScrollView
-        android:layout_width="394dp"
-        android:layout_height="779dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
         android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="30dp">
+        app:layout_constraintTop_toBottomOf="@+id/NameLbl">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView35"
@@ -47,7 +49,7 @@
                 android:layout_width="238dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Start"
+                android:hint="fomrat: MM-dd-yy"
                 android:inputType="date" />
 
             <EditText
@@ -55,7 +57,7 @@
                 android:layout_width="238dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="End"
+                android:hint="fomrat: MM-dd-yy"
                 android:inputType="date" />
 
             <TextView
@@ -101,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Status"
+                android:hint="in progress, completed etc."
                 android:inputType="text" />
 
             <TextView
@@ -115,7 +117,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/eCourseAssRecycler"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="#C3C3C3" />
 
             <Button
                 android:id="@+id/eCourseNewAssButton"
@@ -132,7 +135,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/eCourseNotesRecycler"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:background="#C3C3C3" />
 
             <Button
                 android:id="@+id/eCourseNewNoteButton"
@@ -150,7 +154,13 @@
                 android:id="@+id/eCourseNewAlert"
                 android:layout_width="185dp"
                 android:layout_height="wrap_content"
-                android:text="New Alert" />
+                android:text="New Start Alert" />
+
+            <Button
+                android:id="@+id/eCourseEndAlert"
+                android:layout_width="185dp"
+                android:layout_height="wrap_content"
+                android:text="New End Alert" />
 
             <TextView
                 android:id="@+id/textView17"
@@ -183,8 +193,9 @@
         android:id="@+id/NameLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="Course Info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="4dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

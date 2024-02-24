@@ -40,6 +40,7 @@ public class Repository {
         mCoursesDAO = db.coursesDAO();
         mAssessmentDAO = db.assessmentDAO();
         mInstructorsDAO = db.instructorsDAO();
+        mNotesDAO= db.notesDAO();
     }
 
     //========================= TERMS FUNCTIONS ===========================
@@ -49,7 +50,7 @@ public class Repository {
         });
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(500);
         }catch (InterruptedException e){
             throw new RuntimeException(e);
         }
@@ -61,7 +62,7 @@ public class Repository {
             mTermDAO.deleteAllTerms();
         });
         try {
-            Thread.sleep(1000);
+            Thread.sleep(500);
         }catch (InterruptedException e){
             throw new RuntimeException(e);
         }
@@ -70,11 +71,21 @@ public class Repository {
         databaseExecutor.execute(() -> {
             mTermDAO.insert(term);
         });
+       /* try {
+            Thread.sleep(1000);
+        }catch (InterruptedException e){
+            throw new RuntimeException(e);
+        }*/
     }
     public void updateTerm(Term term){
         databaseExecutor.execute(() -> {
             mTermDAO.update(term);
         });
+       /* try {
+            Thread.sleep(1000);
+        }catch (InterruptedException e){
+            throw new RuntimeException(e);
+        }*/
     }
     public void deleteTerm(Term term){
         databaseExecutor.execute(() -> {
@@ -90,7 +101,7 @@ public class Repository {
         });
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(500);
         }catch (InterruptedException e){
             throw new RuntimeException(e);
         }
@@ -102,7 +113,7 @@ public class Repository {
             mCoursesDAO.deleteAllCourses();
         });
         try {
-            Thread.sleep(1000);
+            Thread.sleep(500);
         }catch (InterruptedException e){
             throw new RuntimeException(e);
         }
@@ -112,11 +123,21 @@ public class Repository {
         databaseExecutor.execute(() -> {
             mCoursesDAO.insert(course);
         });
+        /*try {
+            Thread.sleep(1000);
+        }catch (InterruptedException e){
+            throw new RuntimeException(e);
+        }*/
     }
     public void updateCourse(Courses course){
         databaseExecutor.execute(() -> {
             mCoursesDAO.update(course);
         });
+       /* try {
+            Thread.sleep(1000);
+        }catch (InterruptedException e){
+            throw new RuntimeException(e);
+        }*/
     }
     public void deleteCourse(Courses course){
         databaseExecutor.execute(() -> {
@@ -132,7 +153,7 @@ public class Repository {
         });
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(500);
         }catch (InterruptedException e){
             throw new RuntimeException(e);
         }
@@ -143,11 +164,21 @@ public class Repository {
         databaseExecutor.execute(() -> {
             mAssessmentDAO.insert(assessments);
         });
+       /* try {
+            Thread.sleep(1000);
+        }catch (InterruptedException e){
+            throw new RuntimeException(e);
+        }*/
     }
     public void updateAssessments(Assessments assessments){
         databaseExecutor.execute(() -> {
             mAssessmentDAO.update(assessments);
         });
+        /*try {
+            Thread.sleep(1000);
+        }catch (InterruptedException e){
+            throw new RuntimeException(e);
+        }*/
     }
     public void deleteAssessments(Assessments assessments){
         databaseExecutor.execute(() -> {
@@ -163,7 +194,7 @@ public class Repository {
         });
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(500);
         }catch (InterruptedException e){
             throw new RuntimeException(e);
         }
@@ -193,7 +224,7 @@ public class Repository {
         });
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(500);
         }catch (InterruptedException e){
             throw new RuntimeException(e);
         }
@@ -204,11 +235,21 @@ public class Repository {
         databaseExecutor.execute(() -> {
             mNotesDAO.insert(notes);
         });
+        /*try {
+            Thread.sleep(1000);
+        }catch (InterruptedException e){
+            throw new RuntimeException(e);
+        }*/
     }
     public void updateNotes(Notes notes){
         databaseExecutor.execute(() -> {
             mNotesDAO.update(notes);
         });
+       /* try {
+            Thread.sleep(1000);
+        }catch (InterruptedException e){
+            throw new RuntimeException(e);
+        }*/
     }
     public void deleteNotes(Notes notes){
         databaseExecutor.execute(() -> {

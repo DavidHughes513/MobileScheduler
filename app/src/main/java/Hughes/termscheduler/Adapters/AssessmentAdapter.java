@@ -50,9 +50,9 @@ public class AssessmentViewHolder extends RecyclerView.ViewHolder{
                 int position = getAdapterPosition();
                 Assessments current = mAssessmnets.get(position);
                 Intent intent = new Intent(context, EditAssessment.class);
-                intent.putExtra("assID", current.getAssessmentID());
-                intent.putExtra("assCourseID", current.getCourseID());
-                intent.putExtra("assTitle", current.getAssessmentName());
+                intent.putExtra("currentAssID", current.getAssessmentID());
+                intent.putExtra("assCurrentCourseID", current.getCourseID());
+                intent.putExtra("assTitle", current.getName());
                 intent.putExtra("assStart", current.getStart());
                 intent.putExtra("assEnd", current.getEnd());
                 intent.putExtra("assType", current.getType());

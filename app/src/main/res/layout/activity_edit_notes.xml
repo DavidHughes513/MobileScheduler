@@ -28,26 +28,6 @@
         app:layout_constraintStart_toStartOf="@+id/eNotesTxT"
         app:layout_constraintTop_toBottomOf="@+id/eNotesTxT" />
 
-    <TextView
-        android:id="@+id/textView34"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Note for: "
-        app:layout_constraintBottom_toTopOf="@+id/eNotesTxT"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/eNoteCourseName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="name"
-        app:layout_constraintBottom_toBottomOf="@+id/textView34"
-        app:layout_constraintStart_toEndOf="@+id/textView34"
-        app:layout_constraintTop_toTopOf="@+id/textView34" />
-
     <Button
         android:id="@+id/eNoteDelete"
         android:layout_width="wrap_content"

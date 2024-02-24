@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,10 +14,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TermScheduler"
         tools:targetApi="31">
+        <receiver
+            android:name=".Recievers.AssessmentEndReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+        <receiver
+            android:name=".Recievers.AssessmentStartReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name=".Recievers.CourseReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name=".Recievers.EndCourseReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity
-            android:windowSoftInputMode="adjustNothing"
             android:name=".Activities.Courses.Notes.EditNotes"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
         <activity
             android:name=".Activities.Assessments.AssessmentDetails"
             android:exported="false" />
@@ -26,13 +45,13 @@
             android:name=".Activities.Courses.CourseDetails"
             android:exported="false" />
         <activity
-            android:windowSoftInputMode="adjustNothing"
             android:name=".Activities.Alerts.AssessmentAlert"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:windowSoftInputMode="adjustNothing"
             android:name=".Activities.Alerts.CoursesAlert"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
         <activity
             android:name=".Activities.Assessments.AssessmentList"
             android:exported="false"
@@ -42,40 +61,40 @@
             android:name=".Activities.UI.InstructorsList"
             android:exported="false" />
         <activity
-            android:windowSoftInputMode="adjustNothing"
             android:name=".Activities.Assessments.EditAssessment"
             android:exported="false"
             android:label="Edit Assessment"
-            android:parentActivityName=".Activities.Courses.CourseList" />
+            android:parentActivityName=".Activities.Courses.CourseList"
+            android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:windowSoftInputMode="adjustNothing"
             android:name=".Activities.Terms.EditTerm"
             android:exported="false"
             android:label="Edit Term"
-            android:parentActivityName=".Activities.Terms.TermList" />
+            android:parentActivityName=".Activities.Terms.TermList"
+            android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:windowSoftInputMode="adjustNothing"
             android:name=".Activities.Terms.TermList"
             android:exported="false"
             android:label="Terms List"
-            android:parentActivityName=".Activities.Home" />
+            android:parentActivityName=".Activities.Home"
+            android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:windowSoftInputMode="adjustNothing"
             android:name=".Activities.Courses.CourseList"
             android:exported="false"
             android:label="Courses List"
-            android:parentActivityName=".Activities.Home" />
+            android:parentActivityName=".Activities.Home"
+            android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:windowSoftInputMode="adjustNothing"
             android:name=".Activities.Courses.EditCourse"
             android:exported="false"
             android:label="Edit Course"
-            android:parentActivityName=".Activities.Courses.CourseList" />
+            android:parentActivityName=".Activities.Courses.CourseList"
+            android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:windowSoftInputMode="adjustNothing"
             android:name=".Activities.Home"
             android:exported="true"
-            android:label="Welcome to Term Scheduler!">
+            android:label="Term Scheduler"
+            android:windowSoftInputMode="adjustNothing">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

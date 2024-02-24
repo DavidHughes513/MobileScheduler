@@ -44,7 +44,7 @@ public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder
                     int position = getAdapterPosition();
                     Term current = mTerm.get(position);
                     Intent intent = new Intent(context, EditTerm.class);
-                    intent.putExtra("ID", current.getID());
+                    intent.putExtra("currentTermID", current.getID());
                     intent.putExtra("title", current.getTitle());
                     intent.putExtra("Start", current.getStart());
                     intent.putExtra("End", current.getEnd());
@@ -87,7 +87,7 @@ public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder
 
 
     public void setTerms(List<Term> term){
-        mTerm = term;
+            mTerm = term;
         notifyDataSetChanged();
     }
 

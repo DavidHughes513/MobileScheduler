@@ -1,5 +1,7 @@
 package Hughes.termscheduler.entities;
 
+import android.widget.RadioButton;
+
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -9,18 +11,15 @@ import java.sql.Date;
 public class Assessments {
     @PrimaryKey(autoGenerate = true)
     private int assessmentID;
-
     private int courseID;
-    private String assessmentName;
     private String name;
     private String start;
     private String end;
     private String type;
 
-    public Assessments(int assessmentID, int courseID, String assessmentName, String name, String start, String end, String type) {
+    public Assessments(int assessmentID, int courseID, String name, String start, String end, String type) {
         this.assessmentID = assessmentID;
         this.courseID = courseID;
-        this.assessmentName = assessmentName;
         this.name = name;
         this.start = start;
         this.end = end;
@@ -41,14 +40,6 @@ public class Assessments {
 
     public void setAssessmentID(int assessmentID) {
         this.assessmentID = assessmentID;
-    }
-
-    public String getAssessmentName() {
-        return assessmentName;
-    }
-
-    public void setAssessmentName(String assessmentName) {
-        this.assessmentName = assessmentName;
     }
 
     public String getName() {

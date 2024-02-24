@@ -15,9 +15,12 @@ import Hughes.termscheduler.R;
 import Hughes.termscheduler.dataBase.Repository;
 import Hughes.termscheduler.entities.Assessments;
 import Hughes.termscheduler.entities.Courses;
+import Hughes.termscheduler.entities.Notes;
 import Hughes.termscheduler.entities.Term;
 
 public class Home extends AppCompatActivity {
+
+    public static int numAlert = 57561345;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,15 +58,11 @@ public class Home extends AppCompatActivity {
         });
 
        // repository.deleteAllTerms();
-        System.out.println("Terms Deleted");
         //repository.deleteAllCourses();
-        System.out.println("Courses Deletes");
-
-        System.out.println("testing order 1");
-        //repository.insertTerm(new Term(1, "test", "test", "test"));
-       // repository.insertTerm(new Term(2, "test2", "test2", "test2"));
-        //repository.insertCourse(new Courses(0, 1,"Ctest", "now", "now", "Testing", "Me", "444555666", "no@no.com"));
-       // repository.insertCourse(new Courses(0, 2,"Ctest2", "later", "later", "Still Testing", "Me", "66", "no@nggggg.com"));
+        /*repository.insertTerm(new Term(1, "test", "test", "test"));
+        repository.insertTerm(new Term(2, "test2", "test2", "test2"));
+        repository.insertCourse(new Courses(0, 1,"Ctest", "now", "now", "Testing", "Me", "444555666", "no@no.com"));
+        repository.insertCourse(new Courses(0, 2,"Ctest2", "later", "later", "Still Testing", "Me", "66", "no@nggggg.com"));*/
 
         System.out.println("testing order 2");
     }

@@ -18,7 +18,7 @@ import Hughes.termscheduler.entities.Notes;
 import Hughes.termscheduler.entities.Term;
 
 
-@Database(entities = {Term.class, Courses.class, Instructors.class, Assessments.class, Notes.class}, version = 4, exportSchema = false)
+@Database(entities = {Term.class, Courses.class, Instructors.class, Assessments.class, Notes.class}, version = 7, exportSchema = false)
 public abstract class TermDatabaseBuilder extends RoomDatabase {
 
     public abstract TermDAO termDAO();

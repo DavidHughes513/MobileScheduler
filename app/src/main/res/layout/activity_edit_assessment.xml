@@ -10,7 +10,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:text="ASSESSMENT INFO"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,32 +18,28 @@
 
     <RadioGroup
         android:id="@+id/eAssRadioGroup"
-        android:layout_width="121dp"
-        android:layout_height="199dp"
-        android:layout_marginTop="501dp"
-        android:layout_marginBottom="306dp"
+        android:layout_width="135dp"
+        android:layout_height="151dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.368">
+        app:layout_constraintTop_toBottomOf="@+id/eAssEndDate">
+
+        <RadioButton
+            android:id="@+id/eAssPerfButton"
+            android:layout_width="123dp"
+            android:layout_height="42dp"
+            android:checked="true"
+            android:onClick="checkButton"
+            android:text="Performance" />
 
         <RadioButton
             android:id="@+id/eAssObjButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="100dp"
-            android:text="Objective"
-
-            />
-
-        <RadioButton
-            android:id="@+id/eAssPerfButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Performance" />
-
+            android:layout_marginBottom="60dp"
+            android:onClick="checkButton"
+            android:text="Objective" />
     </RadioGroup>
 
     <EditText
@@ -51,17 +47,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="End Date"
+        android:hint="fomrat: MM-dd-yy"
         android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="305dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.435" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
         android:text="End Date"
         app:layout_constraintBottom_toTopOf="@+id/eAssEndDate"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,28 +68,28 @@
         android:id="@+id/eAssStartDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="52dp"
         android:ems="10"
-        android:hint="Start Date"
+        android:hint="fomrat: MM-dd-yy"
         android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="175dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
         android:text="Start Date"
         app:layout_constraintBottom_toTopOf="@+id/eAssStartDate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/eAssName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
         android:ems="10"
         android:hint="Name"
         android:inputType="text"
@@ -105,22 +102,45 @@
         android:id="@+id/eAssDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:text="Delete Assessment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/eAssSaveButton"
-        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintBottom_toBottomOf="@+id/eAssSaveButton"
+        app:layout_constraintEnd_toEndOf="@+id/textView15"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/eAssRadioGroup"
-        app:layout_constraintVertical_bias="0.706" />
+        app:layout_constraintTop_toTopOf="@+id/eAssSaveButton"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/eAssSaveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:text="Save Assessment"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.741"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/textView15"
-        tools:layout_editor_absoluteY="662dp" />
+        app:layout_constraintTop_toBottomOf="@+id/eAssRadioGroup" />
+
+    <Button
+        android:id="@+id/eAssSetAlert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Start Alert"
+        app:layout_constraintEnd_toEndOf="@+id/textView15"
+        app:layout_constraintHorizontal_bias="0.426"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/eAssSetEndAlert" />
+
+    <Button
+        android:id="@+id/eAssSetEndAlert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set End Alert"
+        app:layout_constraintBottom_toTopOf="@+id/eAssRadioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/eAssEndDate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

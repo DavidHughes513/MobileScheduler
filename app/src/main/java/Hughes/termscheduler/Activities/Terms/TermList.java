@@ -22,29 +22,42 @@ import Hughes.termscheduler.entities.Term;
 
 public class TermList extends AppCompatActivity {
 
+    Repository repository = new Repository(getApplication());
+    List<Term> allTerms = repository.getmAllTerms();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terms_list);
 
+
+
+        //Setting Views
+
         Button newTermButton = findViewById(R.id.TermListNewButton);
 
 //===================== RECYCLER VIEW =================================
 
-        RecyclerView recyclerView = findViewById(R.id.TermListRecycler);
-        Repository repository = new Repository(getApplication());
-        List<Term> allTerms = repository.getmAllTerms();
+       /* RecyclerView recyclerView = findViewById(R.id.TermListRecycler);
         TermAdapter termAdapter = new TermAdapter(this);
         recyclerView.setAdapter(termAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        termAdapter.setTerms(allTerms);
+        termAdapter.setTerms(allTerms);*/
 
 
+
+//Functionality
         newTermButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int newTermID;
+                if(allTerms.size() == 0){
+                    newTermID = 1;
+                }else{
+                    newTermID = allTerms.get(allTerms.size()-1).getID() +1;
+                }
                 Intent intent=new Intent(TermList.this, EditTerm.class);
-                intent.putExtra("ID", 0);
+                intent.putExtra("newTermID", newTermID);
                 startActivity(intent);
             }
         });
@@ -52,21 +65,20 @@ public class TermList extends AppCompatActivity {
 
     }
 
-    @Override
+    //onResume?
+  @Override
     protected void onResume() {
         super.onResume();
         RecyclerView recyclerView = findViewById(R.id.TermListRecycler);
-        Repository repository = new Repository(getApplication());
-        List<Term> allTerms = repository.getmAllTerms();
         TermAdapter termAdapter = new TermAdapter(this);
         recyclerView.setAdapter(termAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        allTerms.clear();
+        allTerms = repository.getmAllTerms();
         termAdapter.setTerms(allTerms);
-
     }
 
-
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_home, menu);
         return true;
@@ -88,7 +100,7 @@ public class TermList extends AppCompatActivity {
             return true;
         }
         return true;
-    }
+    }*/
 
 
 

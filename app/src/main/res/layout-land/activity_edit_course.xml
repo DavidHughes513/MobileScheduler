@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/eCourseInstructRecycler"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.Courses.EditCourse">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameLbl">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Course Name" />
+
+            <EditText
+                android:id="@+id/eCourseNameTXT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DATES"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/eCourseStartDate"
+                android:layout_width="238dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="fomrat: MM-dd-yy"
+                android:inputType="date" />
+
+            <EditText
+                android:id="@+id/eCourseEndDate"
+                android:layout_width="238dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="fomrat: MM-dd-yy"
+                android:inputType="date" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="INSTRUCTOR"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <EditText
+                android:id="@+id/eCourseInstructName"
+                android:layout_width="238dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/eCousreInstructEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/eCourseInstructPhone"
+                android:layout_width="238dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Phone"
+                android:inputType="phone" />
+
+            <TextView
+                android:id="@+id/eCourseStatusTXT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="STATUS" />
+
+            <EditText
+                android:id="@+id/eCourseStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="in progress, completed etc."
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Click Assesment to View and Edit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/eCourseAssRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#C3C3C3" />
+
+            <Button
+                android:id="@+id/eCourseNewAssButton"
+                android:layout_width="185dp"
+                android:layout_height="wrap_content"
+                android:text="New Assessment" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Click Note to View and Edit" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/eCourseNotesRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#C3C3C3" />
+
+            <Button
+                android:id="@+id/eCourseNewNoteButton"
+                android:layout_width="185dp"
+                android:layout_height="wrap_content"
+                android:text="New Note" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ALERTS" />
+
+            <Button
+                android:id="@+id/eCourseNewAlert"
+                android:layout_width="185dp"
+                android:layout_height="wrap_content"
+                android:text="New Start Alert" />
+
+            <Button
+                android:id="@+id/eCourseEndAlert"
+                android:layout_width="185dp"
+                android:layout_height="wrap_content"
+                android:text="New End Alert" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SAVE COURSE" />
+
+            <Button
+                android:id="@+id/eCourseSaveButton"
+                android:layout_width="185dp"
+                android:layout_height="wrap_content"
+                android:text="Save" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DELETE COURSE" />
+
+            <Button
+                android:id="@+id/eCourseDeleteCourseButton"
+                android:layout_width="185dp"
+                android:layout_height="wrap_content"
+                android:text="Delete" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/NameLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Course Info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
